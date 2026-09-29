@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Art Through the Ages | Educational History Timeline</title>
+    <meta name="description"
+        content="Explore the rich chronological evolution of Indian art from the ancient Indus Valley Civilization to Modern Art.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Leaflet.js CSS for Interactive Dynamic Map (Google Maps style) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="header">
+        <div class="header-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-icon">🎨</span>
+                <span class="logo-text">Indian Art History</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#interactive-map" class="nav-link">Interactive Map</a></li>
+                    <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                    <li><a href="#conclusion" class="nav-link">Conclusion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-backdrop-pattern"></div>
+            <div class="hero-content">
+                <h1 class="main-title">Indian Art<br><span class="highlight-title">Through the Ages</span></h1>
+                <p class="hero-subtitle">
+                    A grand chronological journey celebrating the aesthetic, spiritual, and technical evolution
+                    of Indian artistic traditions across millennia.
+                </p>
+                <div class="hero-actions">
+                    <a href="#timeline" class="btn btn-primary">
+                        <span>Explore Timeline</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M19 12l-7 7-7-7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Bar for Periods -->
+            <div class="period-quicknav-wrapper">
+                <div class="period-quicknav">
+                    <a href="#indus-valley" class="quick-chip">Indus Valley</a>
+                    <a href="#mauryan" class="quick-chip">Mauryan</a>
+                    <a href="#gupta" class="quick-chip">Gupta</a>
+                    <a href="#medieval" class="quick-chip">Medieval</a>
+                    <a href="#mughal" class="quick-chip">Mughal</a>
+                    <a href="#colonial" class="quick-chip">Colonial</a>
+                    <a href="#modern" class="quick-chip">Modern</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section class="map-section" id="interactive-map">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Art Map of India</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Explore prominent artistic centers across historical India. Click or hover on any marker to discover
+                    regional art forms and their historical significance.
+                </p>
+            </div>
+
+            <div class="map-container-wrapper">
+                <!-- Leaflet Dynamic Map (Google Maps Style) -->
+                <div class="map-leaflet-container">
+                    <div id="leafletMap" style="width: 100%; height: 520px; border-radius: 16px;"></div>
+                </div>
+
+                <!-- Interactive Details Card Panel -->
+                <div class="map-details-card" id="mapDetailsCard">
+                    <div class="map-details-header">
+                        <span class="region-badge" id="mapRegionBadge">c. 250 BCE</span>
+                        <h3 class="region-title" id="mapRegionTitle">Mauryan Realm</h3>
+                    </div>
+                    <div class="map-details-body">
+                        <div class="map-info-group">
+                            <span class="info-label">Key Art Center</span>
+                            <span class="info-value" id="mapRegionCenter">Sarnath & Chunar (UP / Bihar)</span>
+                        </div>
+                        <div class="map-info-group">
+                            <span class="info-label">Prominent Art Form</span>
+                            <span class="info-value" id="mapRegionArtform">Polished Sandstone Sculptures &
+                                Pillars</span>
+                        </div>
+                        <p class="map-region-desc" id="mapRegionDesc">
+                            Under Emperor Ashoka, royal stone carving reached grand heights at Sarnath and Chunar,
+                            creating polished pillars and the iconic Lion Capital with the Ashoka Chakra.
+                        </p>
+                        <div class="map-card-actions">
+                            <a href="#mauryan" class="btn btn-secondary map-jump-btn" id="mapJumpBtn">
+                                <span>View in Timeline</span>
+                                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section" id="timeline">
+            <div class="section-header">
+                <h2 class="section-title">The Chronological Evolution</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Follow the transformation of artistic mediums, motifs, and philosophy from 2500 BCE to the 20th
+                    Century.
+                </p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Timeline Central Line -->
+                <div class="timeline-line">
+                    <div class="timeline-line-progress" id="timelineProgress"></div>
+                </div>
+
+                <!-- 1. Indus Valley Period -->
+                <div class="timeline-card-wrapper left" id="indus-valley">
+                    <div class="timeline-node">1</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/indus_valley.png" alt="Dancing Girl of Mohenjo-daro"
+                                class="card-image" loading="lazy">
+                            <span class="period-badge">c. 2500 BCE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Indus Valley Civilization</div>
+                            <h3 class="artwork-title">Dancing Girl</h3>
+                            <p class="artwork-description">
+                                Cast in bronze using the lost-wax technique, this world-renowned artifact from
+                                Mohenjo-daro displays remarkable naturalism, posture, and poise. Wearing multiple
+                                bangles along her arm, she symbolizes early mastery over metallurgy and anatomical
+                                aesthetics.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Emergence of urban craftsmanship,
+                                    lost-wax bronze casting, and realistic human form depictions.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Mauryan Period -->
+                <div class="timeline-card-wrapper right" id="mauryan">
+                    <div class="timeline-node">2</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/mauryan.png" alt="Lion Capital of Ashoka" class="card-image"
+                                loading="lazy">
+                            <span class="period-badge">c. 250 BCE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Mauryan Empire</div>
+                            <h3 class="artwork-title">Lion Capital of Ashoka</h3>
+                            <p class="artwork-description">
+                                Carved from a single block of polished Chunar sandstone at Sarnath, this majestic
+                                capital depicts four Asiatic lions standing back-to-back atop an abacus adorned with the
+                                Ashoka Chakra, representing royal authority and Buddhist Dhamma.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Transition from perishable
+                                    materials (wood/clay) to monumental polished stone sculpture under royal
+                                    patronage.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Gupta Period -->
+                <div class="timeline-card-wrapper left" id="gupta">
+                    <div class="timeline-node">3</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/gupta.png" alt="Buddha Statue from Sarnath" class="card-image"
+                                loading="lazy">
+                            <span class="period-badge">c. 5th Century CE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Gupta Empire (Golden Age)</div>
+                            <h3 class="artwork-title">Seated Buddha Statue</h3>
+                            <p class="artwork-description">
+                                Crafted during the Golden Age of Indian art, this iconic Sarnath sandstone sculpture
+                                depicts Buddha in the Dharmachakra Pravartana Mudra. It epitomizes spiritual
+                                tranquility, perfected proportions, and exquisite sheer drapery.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Definition of classical ideals,
+                                    spiritual grace, serene expressions, and ideal human proportions.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Medieval Period -->
+                <div class="timeline-card-wrapper right" id="medieval">
+                    <div class="timeline-node">4</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/medieval.png" alt="Chola Nataraja Bronze Sculpture"
+                                class="card-image" loading="lazy">
+                            <span class="period-badge">c. 10th–11th Century CE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Medieval Chola Dynasty</div>
+                            <h3 class="artwork-title">Chola Nataraja</h3>
+                            <p class="artwork-description">
+                                A masterwork of South Indian bronze casting, Shiva as Nataraja performs the cosmic dance
+                                of creation, preservation, and destruction (Ananda Tandava) encircled by a halo of
+                                flames, balancing dynamic movement with divine composure.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Complex iconographic symbolism,
+                                    dynamic cosmic movement, and peak refinement in South Indian bronzes.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Mughal Period -->
+                <div class="timeline-card-wrapper left" id="mughal">
+                    <div class="timeline-node">5</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/mughal.png" alt="Mughal Miniature Painting" class="card-image"
+                                loading="lazy">
+                            <span class="period-badge">c. 16th–17th Century CE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Mughal Era</div>
+                            <h3 class="artwork-title">Mughal Miniature Painting</h3>
+                            <p class="artwork-description">
+                                Renowned for jewel-like colors, fine brushwork, and intricate details, Mughal miniatures
+                                blended Persian court art with indigenous Indian aesthetics to document royal court
+                                scenes, natural flora and fauna, and historical events.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Fusion of Persian and Indian
+                                    artistic styles, emphasis on realism, courtly portraiture, and manuscript
+                                    illumination.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Colonial Period -->
+                <div class="timeline-card-wrapper right" id="colonial">
+                    <div class="timeline-node">6</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/colonial.png" alt="Raja Ravi Varma Painting" class="card-image"
+                                loading="lazy">
+                            <span class="period-badge">c. 19th–20th Century CE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Colonial Era</div>
+                            <h3 class="artwork-title">Raja Ravi Varma Painting</h3>
+                            <p class="artwork-description">
+                                Pioneer of modern Indian art, Raja Ravi Varma harmonized European academic oil painting
+                                techniques with traditional Indian mythological themes. His lithographic prints
+                                democratized art, bringing sacred imagery into common Indian homes.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Adoption of Western oil painting
+                                    techniques, perspective lighting, and widespread print distribution.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Modern Period -->
+                <div class="timeline-card-wrapper left" id="modern">
+                    <div class="timeline-node">7</div>
+                    <div class="timeline-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/modern.png" alt="M. F. Husain Modern Artwork" class="card-image"
+                                loading="lazy">
+                            <span class="period-badge">c. 20th Century CE</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="period-tag">Modern & Contemporary Art</div>
+                            <h3 class="artwork-title">M. F. Husain Artwork</h3>
+                            <p class="artwork-description">
+                                A founding member of the Progressive Artists' Group, M. F. Husain revolutionized
+                                post-independence Indian art using bold, cubist-inspired strokes and vibrant colors to
+                                depict iconic motifs like galloping horses, epics, and rural life.
+                            </p>
+                            <div class="art-shift-box">
+                                <span class="shift-icon">💡</span>
+                                <span class="shift-text"><strong>Art Shift:</strong> Break from traditional constraints,
+                                    embracing avant-garde expressionism, individual freedom, and modern identity.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="conclusion-section" id="conclusion">
+            <div class="conclusion-card">
+                <div class="conclusion-icon">🏛️</div>
+                <h2 class="conclusion-title">Summary of Artistic Evolution</h2>
+                <p class="conclusion-text">
+                    Indian art is a testament to cultural continuity and adaptive creativity. From the ancient bronze
+                    casting of the Indus Valley to the stone majesty of Mauryan pillars, classical Gupta spirituality,
+                    intricate Mughal miniatures, colonial fusion, and modern expressionism, each epoch has redefined the
+                    visual heritage of India while preserving its soul.
+                </p>
+                <div class="conclusion-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4500+</span>
+                        <span class="stat-label">Years of History</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Key Epochs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Cultural Legacy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Indian Art History</h3>
+                <p>Exploring centuries of visual culture and heritage.</p>
+            </div>
+            <div class="footer-tag">
+                <span>Educational History Portal</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Indian Art Through the Ages | Educational History Website</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet.js Library for Google Maps Style Interactive Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

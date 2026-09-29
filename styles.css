@@ -1,0 +1,858 @@
+/* ==========================================================================
+   Indian Art Through the Ages - Modern Educational Stylesheet
+   Color Palette: Saffron (#E65100), Dark Royal Blue (#0D1B2A), Earthy Brown (#5D4037), Gold (#D4AF37), Cream (#FAF7F2)
+   ========================================================================== */
+
+:root {
+    /* Color Tokens */
+    --bg-main: #FAF7F2;
+    --bg-card: #FFFFFF;
+    --bg-alt: #F3ECE1;
+    --color-saffron: #D85A17;
+    --color-saffron-light: #FFF0E8;
+    --color-saffron-hover: #BF4A0E;
+    --color-royal-blue: #0D1B2A;
+    --color-blue-light: #1E3A5F;
+    --color-earthy-brown: #5D4037;
+    --color-gold: #C59B27;
+    --color-gold-light: #FFF9E6;
+    --text-primary: #1A1A1A;
+    --text-muted: #555555;
+    --border-color: #E2D9CC;
+
+    /* Fonts */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Shadow & Transition */
+    --shadow-sm: 0 2px 8px rgba(13, 27, 42, 0.05);
+    --shadow-md: 0 8px 24px rgba(13, 27, 42, 0.08);
+    --shadow-hover: 0 16px 36px rgba(216, 90, 23, 0.15);
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    color: var(--color-royal-blue);
+    line-height: 1.25;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   1. Header & Navigation
+   ========================================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-royal-blue);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-royal-blue);
+    padding: 0.4rem 0.2rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-saffron);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.assignment-badge {
+    background-color: var(--color-saffron-light);
+    color: var(--color-saffron);
+    border: 1px solid rgba(216, 90, 23, 0.3);
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   2. Hero Section
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
+    overflow: hidden;
+}
+
+.hero-backdrop-pattern {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    background-image: radial-gradient(var(--color-gold) 0.75px, transparent 0.75px);
+    background-size: 24px 24px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.hero-pill {
+    display: inline-block;
+    background-color: var(--color-gold-light);
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: var(--color-royal-blue);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.highlight-title {
+    color: var(--color-saffron);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--color-saffron);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(216, 90, 23, 0.35);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-saffron-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(216, 90, 23, 0.45);
+}
+
+.btn-arrow {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover .btn-arrow {
+    transform: translateY(3px);
+}
+
+/* Quick Nav */
+.period-quicknav-wrapper {
+    margin-top: 3.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+}
+
+.period-quicknav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    min-width: max-content;
+    padding: 0 1rem;
+}
+
+.quick-chip {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1.1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-royal-blue);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.quick-chip:hover {
+    border-color: var(--color-saffron);
+    color: var(--color-saffron);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   2.5 Interactive Map Section
+   ========================================================================== */
+.map-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map-container-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.map-svg-container {
+    position: relative;
+    width: 100%;
+    background: radial-gradient(circle, rgba(197, 155, 39, 0.08) 0%, rgba(13, 27, 42, 0.02) 100%);
+    border-radius: 16px;
+    border: 1px dashed var(--border-color);
+    padding: 1.5rem;
+}
+
+.india-svg-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.india-outline {
+    fill: var(--bg-alt);
+    stroke: var(--color-gold);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    transition: var(--transition-smooth);
+    filter: drop-shadow(0px 8px 16px rgba(13, 27, 42, 0.06));
+}
+
+.state-border {
+    fill: none;
+    stroke: var(--color-gold);
+    stroke-width: 1.2;
+    stroke-dasharray: 3 3;
+    opacity: 0.65;
+}
+
+.map-grid-line {
+    stroke: rgba(197, 155, 39, 0.15);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+}
+
+.trade-route {
+    fill: none;
+    stroke: var(--color-saffron);
+    stroke-width: 2;
+    stroke-dasharray: 6 6;
+    opacity: 0.5;
+}
+
+/* Map Markers */
+.map-marker {
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.marker-pin {
+    fill: var(--color-saffron);
+    stroke: #FFFFFF;
+    stroke-width: 2.5;
+    transition: var(--transition-smooth);
+}
+
+.marker-pulse {
+    fill: var(--color-saffron);
+    opacity: 0.25;
+    animation: pulseMarker 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulseMarker {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+.marker-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    fill: var(--color-royal-blue);
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.map-marker:hover .marker-pin,
+.map-marker.active .marker-pin {
+    fill: var(--color-royal-blue);
+    stroke: var(--color-gold);
+    r: 11;
+}
+
+.map-marker:hover .marker-label,
+.map-marker.active .marker-label {
+    fill: var(--color-saffron);
+    font-size: 14px;
+}
+
+/* Details Panel Card */
+.map-details-card {
+    background: linear-gradient(145deg, var(--bg-main) 0%, var(--bg-card) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    border-top: 4px solid var(--color-saffron);
+}
+
+.map-details-header {
+    margin-bottom: 1.25rem;
+}
+
+.region-badge {
+    display: inline-block;
+    background-color: var(--color-gold-light);
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.region-title {
+    font-size: 1.6rem;
+    color: var(--color-royal-blue);
+}
+
+.map-info-group {
+    margin-bottom: 1rem;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-saffron);
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+
+.info-value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-royal-blue);
+}
+
+.map-region-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 1.25rem 0 1.5rem;
+    line-height: 1.6;
+}
+
+.btn-secondary {
+    background-color: var(--color-royal-blue);
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 27, 42, 0.25);
+}
+
+@media (max-width: 900px) {
+    .map-container-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   3. Timeline Section
+   ========================================================================== */
+.timeline-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.section-divider {
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-saffron), var(--color-gold));
+    margin: 0 auto 1rem;
+    border-radius: 2px;
+}
+
+.section-description {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Timeline Architecture */
+.timeline-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: var(--border-color);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-line-progress {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, var(--color-saffron), var(--color-gold));
+    border-radius: 2px;
+    transition: height 0.2s ease-out;
+}
+
+.timeline-card-wrapper {
+    position: relative;
+    width: 50%;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-card-wrapper.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-card-wrapper.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Central Node */
+.timeline-node {
+    position: absolute;
+    top: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 3px solid var(--color-saffron);
+    color: var(--color-royal-blue);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    transition: var(--transition-smooth);
+}
+
+.timeline-card-wrapper.left .timeline-node {
+    right: -20px;
+}
+
+.timeline-card-wrapper.right .timeline-node {
+    left: -20px;
+}
+
+.timeline-card-wrapper:hover .timeline-node {
+    background-color: var(--color-saffron);
+    color: #FFFFFF;
+    transform: scale(1.15);
+}
+
+/* Timeline Card Design */
+.timeline-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    text-align: left;
+}
+
+.timeline-card-wrapper:hover .timeline-card {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(216, 90, 23, 0.4);
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #111;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.timeline-card:hover .card-image {
+    transform: scale(1.06);
+}
+
+.period-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(8px);
+    color: var(--color-gold);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid rgba(197, 155, 39, 0.4);
+}
+
+.card-body {
+    padding: 1.75rem;
+}
+
+.period-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-saffron);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.35rem;
+}
+
+.artwork-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.artwork-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.art-shift-box {
+    background-color: var(--bg-main);
+    border-left: 3px solid var(--color-saffron);
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--color-royal-blue);
+}
+
+.shift-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   4. Conclusion Section
+   ========================================================================== */
+.conclusion-section {
+    padding: 4rem 2rem 6rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.conclusion-card {
+    background: linear-gradient(135deg, var(--color-royal-blue) 0%, var(--color-blue-light) 100%);
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: 3.5rem 3rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.conclusion-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(216, 90, 23, 0.25) 0%, transparent 70%);
+}
+
+.conclusion-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.conclusion-title {
+    color: var(--color-gold);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.conclusion-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+}
+
+.conclusion-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 2rem;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   5. Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-royal-blue);
+    color: #FFFFFF;
+    padding: 3rem 2rem 1.5rem;
+    border-top: 3px solid var(--color-saffron);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.footer-tag span {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   6. Responsive Layout Media Queries
+   ========================================================================== */
+@media (max-width: 900px) {
+    .timeline-line {
+        left: 24px;
+    }
+
+    .timeline-card-wrapper {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+
+    .timeline-card-wrapper.left,
+    .timeline-card-wrapper.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-card-wrapper.left .timeline-node,
+    .timeline-card-wrapper.right .timeline-node {
+        left: 4px;
+        right: auto;
+    }
+
+    .conclusion-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-section {
+        padding-top: 4rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}

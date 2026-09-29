@@ -1,0 +1,4 @@
+/* Netlify & Vercel Single Page App (SPA) redirect rule */
+/* If deploying standard static HTML files without routing, static HTML works out of the box, but redirect rules ensure clean routing if needed */
+/* For standard static sites on Netlify, _redirects is ignored or used for fallback */
+/* For Vercel, vercel.json ensures proper static output */
